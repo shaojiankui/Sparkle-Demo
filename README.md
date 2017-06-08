@@ -28,6 +28,30 @@ Sparkle-Demo，use Sparkle framework update macOS app
 github appcast.xml地址拼接规则为https://raw.githubusercontent.com/github用户名/仓库名/master/文件夹名/appcast.xml
 
 ## appcast.xml
+
+```
+<?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0" xmlns:sparkle="http://www.andymatuschak.org/xml-namespaces/sparkle" xmlns:dc="http://purl.org/dc/elements/1.1/">
+	<channel>
+		<title>Changelog</title>
+		<link>https://xxxxxx/app.xml</link>
+		<description>ChangelogChangelogChangelogChangelog</description>
+		<language>en</language>
+        <item>
+            <title><![CDATA[Version 2.0]]></title>
+            <description><![CDATA[<ul>
+                <li>修复问题</li>
+                </ul>
+            ]]></description>
+            <pubDate>2017-06-08 01:47:00 GMT</pubDate>
+            <enclosure url="https://raw.githubusercontent.com/shaojiankui/Sparkle-Demo/master/Sparkle-Demo2.0.zip" length="xxx" type="application/octet-stream" sparkle:version="19" sparkle:shortVersionString="2.0">
+            </enclosure>
+        </item>
+	</channel>
+</rss>
+
+```
+
 ### title
 为更新标题
 ### item
