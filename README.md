@@ -1,10 +1,16 @@
 # Sparkle-Demo
 Sparkle-Demo，use Sparkle framework update macOS app
 
-
+本例使用Sparkle与github来实现macOS app的自动更新
 ## 配置Xcode工程
-### 拖入Sparkle.framework到工厂，注意库为动态库，所以确保 工程->target->general的embedded binaries中有Sparkle.framework
+### 拖入Sparkle.framework
+拖入Sparkle.framework到工程，注意Sparkle库为动态库，所以确保 工程->target->general的embedded binaries中有Sparkle.framework
+
+![image](https://raw.githubusercontent.com/shaojiankui/Sparkle-Demo/master/addproject.png)
+
 ### 增加代码
+
+```
 #import <Sparkle/Sparkle.h>
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
@@ -14,8 +20,11 @@ Sparkle-Demo，use Sparkle framework update macOS app
     //............
     [[SUUpdater sharedUpdater] checkForUpdatesInBackground];
 }
+```
+
 ### 修改plist
 在xcode工程的info.plist中加入key SUFeedURL，值为xml存在的服务器地址，本例xml存在github服务器中，所以为https://raw.githubusercontent.com/shaojiankui/Sparkle-Demo/master/appcast.xml
+
 github appcast.xml地址拼接规则为https://raw.githubusercontent.com/github用户名/仓库名/master/文件夹名/appcast.xml
 
 ## appcast.xml
@@ -42,6 +51,8 @@ length 为文件大小
 ### pubDate
 发布时间
 
+### 效果
+![image](https://raw.githubusercontent.com/shaojiankui/Sparkle-Demo/master/demo.png)
 
 ## 官方文档
 https://sparkle-project.org/documentation/

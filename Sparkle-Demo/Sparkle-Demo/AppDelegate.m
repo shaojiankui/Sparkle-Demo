@@ -22,7 +22,6 @@
     [[SUUpdater sharedUpdater] setSendsSystemProfile:YES];
     //............
     [[SUUpdater sharedUpdater] checkForUpdatesInBackground];
-    
 }
 
 - (NSString *)feedURLStringForUpdater:(SUUpdater *)updater
